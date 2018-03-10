@@ -20,7 +20,8 @@ from tqdm import tqdm
 import cv2  
 
 # load the list of dog breeds to predict from
-dog_names = [item[20:-1] for item in sorted(glob("dogImages/dogImages/train/*/"))]
+file2 = open("breeds.txt","r")
+dog_names = file2.read().split()
 
 # load features from InceptionsV3Data
 features = np.load("bottleneck_features/DogInceptionV3Data.npz")
